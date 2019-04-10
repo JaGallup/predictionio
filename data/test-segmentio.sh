@@ -95,7 +95,7 @@ curl -i -X POST http://localhost:7070/webhooks/segmentio.json?accessKey=$accessK
   "version"   : 1,
   "type"      : "invalid_type",
   "userId"    : "019mr8mf4r",
-  "sent_at":"2015-08-21T15:25:32.799Z",
+  "sentAt":"2015-08-21T15:25:32.799Z",
   "traits"    : {
       "email"            : "achilles@segment.com",
       "name"             : "Achilles",
@@ -113,7 +113,7 @@ curl -i -X POST http://localhost:7070/webhooks/segmentio.json?accessKey=$accessK
 -d '{
   "version"   : 1,
   "userId"    : "019mr8mf4r",
-  "sent_at":"2015-08-21T15:25:32.799Z",
+  "sentAt":"2015-08-21T15:25:32.799Z",
   "traits"    : {
       "email"            : "achilles@segment.com",
       "name"             : "Achilles",
@@ -132,7 +132,7 @@ curl -i -X POST http://localhost:7070/webhooks/invalidpath.json?accessKey=$acces
   "version"   : 1,
   "type"      : "identify",
   "userId"    : "019mr8mf4r",
-  "sent_at":"2015-08-21T15:25:32.799Z",
+  "sentAt":"2015-08-21T15:25:32.799Z",
   "traits"    : {
       "email"            : "achilles@segment.com",
       "name"             : "Achilles",

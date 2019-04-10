@@ -169,7 +169,7 @@ private[predictionio] object SegmentIOConnector extends JsonConnector {
 
   private def commonToJson(common: Common, typ: String): JObject = {
     import org.json4s.JsonDSL._
-      common.user_id.orElse(common.anonymous_id) match {
+      common.userId.orElse(common.anonymousId) match {
         case Some(userId) =>
           ("event" -> typ) ~
             ("entityType" -> "user") ~
