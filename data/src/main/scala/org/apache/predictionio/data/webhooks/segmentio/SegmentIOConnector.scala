@@ -118,7 +118,7 @@ private[predictionio] object SegmentIOConnector extends JsonConnector {
 
   def toEventJson(common: Common, alias: Events.Alias): JObject = {
     import org.json4s.JsonDSL._
-    toJson(common, "previous_id" -> alias.previous_id)
+    toJson(common, "previousId" -> alias.previousId)
   }
 
   def toEventJson(common: Common, screen: Events.Screen): JObject = {
@@ -140,7 +140,7 @@ private[predictionio] object SegmentIOConnector extends JsonConnector {
   def toEventJson(common: Common, group: Events.Group): JObject = {
     import org.json4s.JsonDSL._
     val eventProperties =
-      ("group_id" -> group.group_id) ~
+      ("groupId" -> group.groupId) ~
       ("traits" -> group.traits)
     toJson(common, eventProperties)
   }
@@ -191,10 +191,13 @@ object Events {
     properties: Option[JObject] = None
   )
 
-  private[predictionio] case class Alias(previous_id: String, user_id: String)
+  private[predictionio] case class Alias(
+    previousId: String, 
+    userId: String
+  )
 
   private[predictionio] case class Group(
-    group_id: String,
+    groupId: String,
     traits: Option[JObject] = None
   )
 
@@ -209,7 +212,7 @@ object Events {
   )
 
   private[predictionio] case class Identify(
-    user_id: String,
+    userId: String,
     traits: Option[JObject]
   )
 
@@ -227,7 +230,7 @@ object Common {
   private[predictionio] case class Context(
     ip: String,
     library: Library,
-    user_agent: String,
+    userAgent: String,
     app: Option[App] = None,
     campaign: Option[Campaign] = None,
     device: Option[Device] = None,
@@ -272,8 +275,8 @@ object Common {
 
   private[predictionio] case class Device(
     id: Option[String] = None,
-    advertising_id: Option[String] = None,
-    ad_tracking_enabled: Option[Boolean] = None,
+    advertisingId: Option[String] = None,
+    adTrackingEnabled: Option[Boolean] = None,
     manufacturer: Option[String] = None,
     model: Option[String] = None,
     name: Option[String] = None,
@@ -299,11 +302,11 @@ object Common {
 
 private[predictionio] case class Common(
   `type`: String,
-  sent_at: String,
+  sentAt: String,
   timestamp: String,
   version: String,
-  anonymous_id: Option[String] = None,
-  user_id: Option[String] = None,
+  anonymousId: Option[String] = None,
+  userId: Option[String] = None,
   context: Option[Common.Context] = None,
   integrations: Option[Common.Integrations] = None
 )
