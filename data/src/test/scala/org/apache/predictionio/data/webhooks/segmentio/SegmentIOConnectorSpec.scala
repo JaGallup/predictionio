@@ -28,8 +28,8 @@ class SegmentIOConnectorSpec extends Specification with ConnectorTestUtil {
 
   val commonFields =
     s"""
-       |  "anonymous_id": "id",
-       |  "sent_at": "sendAt",
+       |  "anonymousId": "id",
+       |  "sentAt": "sendAt",
        |  "version": "2",
      """.stripMargin
 
@@ -53,8 +53,8 @@ class SegmentIOConnectorSpec extends Specification with ConnectorTestUtil {
           |    },
           |    "device": {
           |      "id": "B5372DB0-C21E-11E4-8DFC-AA07A5B093DB",
-          |      "advertising_id": "7A3CBEA0-BDF5-11E4-8DFC-AA07A5B093DB",
-          |      "ad_tracking_enabled": true,
+          |      "advertisingId": "7A3CBEA0-BDF5-11E4-8DFC-AA07A5B093DB",
+          |      "adTrackingEnabled": true,
           |      "manufacturer": "Apple",
           |      "model": "iPhone7,2",
           |      "name": "maguro",
@@ -93,7 +93,7 @@ class SegmentIOConnectorSpec extends Specification with ConnectorTestUtil {
           |      "density": 2
           |    },
           |    "timezone": "Europe/Amsterdam",
-          |    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_5)"
+          |    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_5)"
           |  }
         """.stripMargin
 
@@ -101,8 +101,8 @@ class SegmentIOConnectorSpec extends Specification with ConnectorTestUtil {
         s"""
            |{ $commonFields
             |  "type": "group",
-            |  "group_id": "groupId",
-            |  "user_id": "userIdValue",
+            |  "groupId": "groupId",
+            |  "userId": "userIdValue",
             |  "timestamp" : "2012-12-02T00:30:08.276Z",
             |  "traits": {
             |    "name": "groupName",
@@ -120,7 +120,7 @@ class SegmentIOConnectorSpec extends Specification with ConnectorTestUtil {
           |  "entityId": "userIdValue",
           |  "properties": {
           |    $context,
-          |    "group_id": "groupId",
+          |    "groupId": "groupId",
           |    "traits": {
           |      "name": "groupName",
           |      "employees": 329
@@ -138,8 +138,8 @@ class SegmentIOConnectorSpec extends Specification with ConnectorTestUtil {
         s"""
           |{ $commonFields
           |  "type": "group",
-          |  "group_id": "groupId",
-          |  "user_id": "userIdValue",
+          |  "groupId": "groupId",
+          |  "userId": "userIdValue",
           |  "timestamp" : "2012-12-02T00:30:08.276Z",
           |  "traits": {
           |    "name": "groupName",
@@ -155,7 +155,7 @@ class SegmentIOConnectorSpec extends Specification with ConnectorTestUtil {
           |  "entityType": "user",
           |  "entityId": "userIdValue",
           |  "properties": {
-          |    "group_id": "groupId",
+          |    "groupId": "groupId",
           |    "traits": {
           |      "name": "groupName",
           |      "employees": 329
@@ -174,7 +174,7 @@ class SegmentIOConnectorSpec extends Specification with ConnectorTestUtil {
           |{ $commonFields
           |  "type": "screen",
           |  "name": "screenName",
-          |  "user_id": "userIdValue",
+          |  "userId": "userIdValue",
           |  "timestamp" : "2012-12-02T00:30:08.276Z",
           |  "properties": {
           |    "variation": "screenVariation"
@@ -207,7 +207,7 @@ class SegmentIOConnectorSpec extends Specification with ConnectorTestUtil {
           |{ $commonFields
           |  "type": "page",
           |  "name": "pageName",
-          |  "user_id": "userIdValue",
+          |  "userId": "userIdValue",
           |  "timestamp" : "2012-12-02T00:30:08.276Z",
           |  "properties": {
           |    "title": "pageTitle",
@@ -241,8 +241,8 @@ class SegmentIOConnectorSpec extends Specification with ConnectorTestUtil {
         s"""
           |{ $commonFields
           |  "type": "alias",
-          |  "previous_id": "previousIdValue",
-          |  "user_id": "userIdValue",
+          |  "previousId": "previousIdValue",
+          |  "userId": "userIdValue",
           |  "timestamp" : "2012-12-02T00:30:08.276Z"
           |}
         """.stripMargin
@@ -254,7 +254,7 @@ class SegmentIOConnectorSpec extends Specification with ConnectorTestUtil {
           |  "entityType": "user",
           |  "entityId": "userIdValue",
           |  "properties": {
-          |    "previous_id" : "previousIdValue"
+          |    "previousId" : "previousIdValue"
           |  },
           |  "eventTime" : "2012-12-02T00:30:08.276Z"
           |}
@@ -267,7 +267,7 @@ class SegmentIOConnectorSpec extends Specification with ConnectorTestUtil {
       val track =
        s"""
           |{ $commonFields
-          |  "user_id": "some_user_id",
+          |  "userId": "some_user_id",
           |  "type": "track",
           |  "event": "Registered",
           |  "timestamp" : "2012-12-02T00:30:08.276Z",
@@ -302,7 +302,7 @@ class SegmentIOConnectorSpec extends Specification with ConnectorTestUtil {
       val identify = s"""
         { $commonFields
           "type"      : "identify",
-          "user_id"    : "019mr8mf4r",
+          "userId"    : "019mr8mf4r",
           "traits"    : {
               "email"            : "achilles@segment.com",
               "name"             : "Achilles",

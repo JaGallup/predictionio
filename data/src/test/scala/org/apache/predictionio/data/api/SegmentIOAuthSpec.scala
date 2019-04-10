@@ -128,7 +128,7 @@ class SegmentIOAuthSpec extends Specification with Specs2RouteTest {
           |  },
           |  "message_id": "022bb90c-bbac-11e4-8dfc-aa07a5b093db",
           |  "timestamp": "2015-02-23T22:28:55.387Z",
-          |  "sent_at": "2015-02-23T22:28:55.111Z",
+          |  "sentAt": "2015-02-23T22:28:55.111Z",
           |  "traits": {
           |    "name": "Peter Gibbons",
           |    "email": "peter@initech.com",
@@ -136,7 +136,7 @@ class SegmentIOAuthSpec extends Specification with Specs2RouteTest {
           |    "logins": 5
           |  },
           |  "type": "identify",
-          |  "user_id": "97980cfea0067",
+          |  "userId": "97980cfea0067",
           |  "version": "2"
           |}
         """.stripMargin
